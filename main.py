@@ -1,5 +1,6 @@
 #main file for ms3 rover simulation
 import serial
+import argparse
 
 
 class SimCourse:
@@ -48,13 +49,18 @@ class SimCourse:
         checksum = distance_expected & 0x17
         return bytes([0x03, distance_expected, checksum, 0x00, 0x00])
 
+#time to parse command line args
+parser = argparse.ArgumentParser(description='Simulate G3\'s rover over UART')
+parser.add_argument("port", help="port to open UART connection on")
+parser.add_argument("course_file", help="file to read course from")
+args = parser.parse_args()
 
-ser = serial.Serial("COM22", 19200, timeout=1)
+ser = serial.Serial(args.port, 19200, timeout=1)
 if ser.isOpen():
-    print("Opened port")
+    print("Opened port", args.port)
 
 #object that will contain course data
-course = SimCourse('course_data.txt')
+course = SimCourse(args.course_file)
 
 #loop forever
 while 1:
