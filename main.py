@@ -45,7 +45,7 @@ class SimCourse:
 
     def get_movement(self):
         """returns perfect movement data"""
-        distance_expected = [0x00, 0x00]
+        distance_expected = [0x00, 0x00] #
         if self.expected_command_array[self.current_place-1][0] == 0xBC:
             distance_expected[0] = 0x3C  # left
             distance_expected[1] = 0x3C  # right
