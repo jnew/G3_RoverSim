@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../G3_ARMSim/.idea/G3_ARMSim.iml" filepath="$PROJECT_DIR$/../G3_ARMSim/.idea/G3_ARMSim.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/G3_RoverSim.iml" filepath="$PROJECT_DIR$/.idea/G3_RoverSim.iml" />
     </modules>
   </component>
