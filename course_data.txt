@@ -1,6 +1,39 @@
-01 02 03    #this is checkpoint 0
-00 00       #this is what the rover should say back
-02 03 04    #this is checkpoint 1
-ff ff
-04 05 06
-ab cd
+FF 3C 3C        #f 255 fl 60 bl 60, facing unknown
+BC A0 20 FF FF  #this is what the rover should say back, in this case, go forward until obstacle
+
+2D 3C 3C        #we are now facing obstacle
+BA E0 20 12 12  #turn left
+
+FF 3C 3C        #we are now on the side of the obstacle
+BC A0 20 FF FF  #go forward until cleared obstacle
+
+FF FF FF        #we have cleared the obstacle
+BA A0 20 2D 2D  #inch forward a little bit
+
+FF FF FF
+BA A0 60 12 12  #turn right
+
+FF FF FF
+BA A0 20 2D 2D  #inch forward a little bit
+
+FF 3C 3C        #against side of obstacle
+BC A0 20 FF FF  #go forward until cleared obstacle
+
+FF FF FF
+BA A0 20 2D 2D  #inch forward a little bit
+
+FF FF FF
+BA A0 60 12 12  #turn right
+
+FF FF FF
+BA A0 20 2D 2D  #inch forward a little bit
+
+FF 3C 3C
+BC A0 20 FF FF  #go forward until cleared obstacle
+
+2D 3C 3C        #facing wall
+BA E0 20 12 12  #turn left
+
+FF 3C 3C        #have navigated around obstacle, now facing forward with wall to left
+BC A0 20 FF FF  #go forward until next obstacle, done with simulation course
+
